@@ -36,8 +36,10 @@ void MainWindow::createToolbar()
     toolbar->addAction(createAction("polygon.png", "Polygon"));
     toolbar->addAction(createAction("triangle.png", "Triangle"));
     toolbar->addSeparator();
+    toolbar->addAction(createAction("square.png", "Square"));
     toolbar->addAction(createAction("rectangle.png", "Rectangle"));
     toolbar->addAction(createAction("rhombus.png", "Rhombus"));
+    toolbar->addAction(createAction("square.png", "Square"));
     toolbar->addAction(createAction("square.png", "Square"));
 
     createCentralWidget();
