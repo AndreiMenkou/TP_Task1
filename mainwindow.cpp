@@ -37,17 +37,9 @@ void MainWindow::createToolbar()
     toolbar->addAction(createAction("polygon.png", "Polygon", GraphicsScene::TPolygon));
     toolbar->addAction(createAction("triangle.png", "Triangle", GraphicsScene::TTriangle));
     toolbar->addSeparator();
-<<<<<<< .merge_file_a05344
     toolbar->addAction(createAction("rectangle.png", "Rectangle", GraphicsScene::TRectangle));
     toolbar->addAction(createAction("rhombus.png", "Rhombus", GraphicsScene::TRhombus));
     toolbar->addAction(createAction("square.png", "Square", GraphicsScene::TSquare));
-=======
-    toolbar->addAction(createAction("square.png", "Square"));
-    toolbar->addAction(createAction("rectangle.png", "Rectangle"));
-    toolbar->addAction(createAction("rhombus.png", "Rhombus"));
-    toolbar->addAction(createAction("square.png", "Square"));
-    toolbar->addAction(createAction("square.png", "Square"));
->>>>>>> .merge_file_a02116
 
     createCentralWidget();
 }
