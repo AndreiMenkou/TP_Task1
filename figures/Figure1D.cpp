@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////////
+//  Figure1D.cpp
+//  Implementation of the Class Figure1D
+//  Created on:      16-Oct-2011 17:54:55
+///////////////////////////////////////////////////////////
+
+#include "Figure1D.h"
+
+
+Figure1D::Figure1D(){
+
+}
+
+
+
+Figure1D::~Figure1D(){
+
+}

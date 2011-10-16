@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////////
+//  Square.cpp
+//  Implementation of the Class Square
+//  Created on:      16-Oct-2011 17:54:57
+///////////////////////////////////////////////////////////
+
+#include "Square.h"
+
+
+Square::Square(){
+
+}
+
+
+
+Square::~Square(){
+
+}

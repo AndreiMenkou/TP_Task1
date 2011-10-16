@@ -2,11 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
+#include "GraphicsScene.h"
 
-class QButtonGroup;
 class QGraphicsView;
 class QGraphicsScene;
 class QAction;
+class QActionGroup;
 
 class MainWindow : public QMainWindow
 {
@@ -17,13 +18,16 @@ public:
     ~MainWindow();
 
 private:
-    QButtonGroup * toolBarGroup;
     QGraphicsView * graphicsView;
-    QGraphicsScene * scene;
+    GraphicsScene * scene;
+    QActionGroup * actionGroup;
 
-    QAction * createAction(const QString& iconFilename, const QString& text);
+    QAction * createAction(const QString& iconFilename, const QString& text, GraphicsScene::FigureType);
     void createToolbar();
     void createCentralWidget();
+
+private slots:
+    void figureChanged();
 };
 
 #endif // MAINWINDOW_H
