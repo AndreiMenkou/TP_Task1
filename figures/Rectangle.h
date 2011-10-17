@@ -13,7 +13,8 @@ class Rectangle : public Rhombus
 {
 
 public:
-	Rectangle();
+        Rectangle() {}
+        Rectangle(const QPoint&, const QPoint&);
 	virtual ~Rectangle();
 
 };

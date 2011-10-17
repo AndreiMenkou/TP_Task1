@@ -7,7 +7,7 @@
 #include "Rectangle.h"
 
 
-Rectangle::Rectangle(){
+Rectangle::Rectangle(const QPoint& center, const QPoint& border) {
 
 }
 

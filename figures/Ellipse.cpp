@@ -5,32 +5,24 @@
 ///////////////////////////////////////////////////////////
 
 #include "Ellipse.h"
+#include <cmath>
 
-
-Ellipse::Ellipse() {
-    Ellipse(QPoint(0,0), QPoint(10, 10));
-}
+Ellipse::Ellipse() { }
 
 Ellipse::Ellipse(const QPoint& aCenter, const QPoint& onBorder) {
     setCenter(aCenter);
-    setMajorRadius(std::abs(aCenter.x() - onBorder.x()));
-    setMinorRadius(std::abs(aCenter.y() - onBorder.y()));
-    qDebug() << "Ellipse::Ellipse " << aCenter << " " << onBorder;
-    qDebug() << "Ellipse::Ellipse " << getMajorRadius() << " " << getMinorRadius();
+    setMajorRadius((int) std::abs((double) aCenter.x() - onBorder.x()));
+    setMinorRadius((int) std::abs((double) aCenter.y() - onBorder.y()));
 }
-
 
 
 Ellipse::~Ellipse(){
 
 }
 
-
-
 void Ellipse::draw() {
-    qDebug() << "Ellipse::draw " << "drawing!!!" << " : " << getMajorRadius() << " " << getMinorRadius() ;
+    painter->fillRect(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius(), Qt::Dense3Pattern);
     painter->drawEllipse(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius());
-//    painter->drawEllipse(0, 0, 40, 40);
 }
 
 QRectF Ellipse::boundingRect() const {
@@ -38,24 +30,20 @@ QRectF Ellipse::boundingRect() const {
 }
 
 int Ellipse::getMajorRadius() const {
-
 	return majorRadius;
 }
 
 
 int Ellipse::getMinorRadius() const {
-
 	return minorRadius;
 }
 
 
 void Ellipse::setMajorRadius(int newVal) {
-    qDebug() << "Ellipse::setMajorRadius " << newVal;
 	majorRadius = newVal;
 }
 
 
 void Ellipse::setMinorRadius(int newVal){
-
 	minorRadius = newVal;
 }

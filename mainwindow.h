@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
+#include <QColorDialog>
 #include "GraphicsScene.h"
 
 class QGraphicsView;
@@ -21,13 +22,17 @@ private:
     QGraphicsView * graphicsView;
     GraphicsScene * scene;
     QActionGroup * actionGroup;
+    QAction* fillColorAction;
 
-    QAction * createAction(const QString& iconFilename, const QString& text, GraphicsScene::FigureType);
+    QAction * createAction(const QString& iconFilename, const QString& text);
     void createToolbar();
     void createCentralWidget();
+    void createColorToolbar();
+    QIcon createColorToolButtonIcon(QColor color);
 
 private slots:
     void figureChanged();
+    void fillColorChanged();
 };
 
 #endif // MAINWINDOW_H
