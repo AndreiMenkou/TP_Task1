@@ -61,6 +61,11 @@ void AbstractFigure::setBorderWidth(int newVal){
 	borderWidth = newVal;
 }
 
+QPainterPath shape() const {
+    QPainterPath painterPath;
+    return painterPath;
+}
+
 
 void AbstractFigure::setCenter(const QPoint& newCenter){
         center = newCenter;

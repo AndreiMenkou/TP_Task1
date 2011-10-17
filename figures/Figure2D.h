@@ -16,11 +16,11 @@ public:
 	Figure2D();
 	virtual ~Figure2D();
 
-        QColor* getFillColor();
-	void setFillColor(QColor* color);
+        QColor getFillColor();
+        void setFillColor(const QColor& color);
 
 private:
-        QColor* fillColor;
+        QColor fillColor;
 
 };
 #endif // !defined(EA_00D0A2DB_9C8E_4124_9A3B_D27CE6448DBE__INCLUDED_)

@@ -13,14 +13,19 @@ void GraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
     ++numberClicks;
     listPoints->append(event->scenePos().toPoint());
+    Figure2D * figure = 0;
     if (figureType == "Circle") {
 
         if (numberClicks % 2 == 0) {
-            Figure2D * figure = new Circle(listPoints->at(numberClicks - 2),
+            figure = new Circle(listPoints->at(numberClicks - 2),
                                                  listPoints->at(numberClicks - 1));
-            figure->setFillColor(&fillColor);
-            addItem(figure);
+
         }
+    }
+    if (figure != 0) {
+        figure->setFillColor(fillColor);
+        qDebug() << fillColor ;
+        addItem(figure);
     }
     qDebug() << "FigureType = " << figureType;
     QGraphicsScene::mousePressEvent(event);

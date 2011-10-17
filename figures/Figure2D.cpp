@@ -21,13 +21,11 @@ Figure2D::~Figure2D(){
 
 
 
-QColor* Figure2D::getFillColor(){
-
+QColor Figure2D::getFillColor(){
 	return fillColor;
 }
 
 
-void Figure2D::setFillColor(QColor* color){
-
+void Figure2D::setFillColor(const QColor& color){
         fillColor = color;
 }

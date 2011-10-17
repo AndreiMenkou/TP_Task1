@@ -21,7 +21,8 @@ Ellipse::~Ellipse(){
 }
 
 void Ellipse::draw() {
-    painter->fillRect(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius(), Qt::Dense3Pattern);
+    painter->setPen(QPen(getFillColor()));
+    painter->fillRect(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius(), Qt::SolidPattern);
     painter->drawEllipse(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius());
 }
 
@@ -46,4 +47,9 @@ void Ellipse::setMajorRadius(int newVal) {
 
 void Ellipse::setMinorRadius(int newVal){
 	minorRadius = newVal;
+}
+
+QPainterPath Ellipse::shape() const {
+    QPainterPath painterPath;
+    painterPath.addEllipse(QRectF());
 }

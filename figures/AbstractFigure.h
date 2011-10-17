@@ -26,6 +26,7 @@ public:
         void setCenter(const QPoint&);
         void setPainter(QPainter* painter);
         void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget);
+        QPainterPath shape() const;
 
 private:
         QColor* borderColor;
