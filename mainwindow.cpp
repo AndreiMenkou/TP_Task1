@@ -73,5 +73,5 @@ void MainWindow::createCentralWidget()
 void MainWindow::figureChanged() {
 
 //    qDebug() << qVariantValue<GraphicsScene::FigureType>(actionGroup->checkedAction()->data());
-    scene->setFigureType(dynamic_cast<GraphicsScene::FigureType>(actionGroup->checkedAction()->data()));
+    scene->setFigureType(qVariantValue<GraphicsScene::FigureType>(actionGroup->checkedAction()->data()));
 }
