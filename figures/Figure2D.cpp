@@ -17,7 +17,10 @@ Figure2D::~Figure2D(){
 
 }
 
-
+void Figure2D::draw() {
+    painter->fillPath(painterPath, QBrush(fillColor));
+    AbstractFigure::draw();
+}
 
 
 

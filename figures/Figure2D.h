@@ -21,6 +21,8 @@ public:
 
 private:
         QColor fillColor;
+protected:
+        void draw();
 
 };
 #endif // !defined(EA_00D0A2DB_9C8E_4124_9A3B_D27CE6448DBE__INCLUDED_)

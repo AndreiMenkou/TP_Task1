@@ -16,11 +16,3 @@ Point::Point(){
 Point::~Point(){
 
 }
-
-
-
-
-
-void Point::draw(){
-
-}

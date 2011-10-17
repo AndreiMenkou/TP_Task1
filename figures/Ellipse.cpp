@@ -13,21 +13,12 @@ Ellipse::Ellipse(const QPoint& aCenter, const QPoint& onBorder) {
     setCenter(aCenter);
     setMajorRadius((int) std::abs((double) aCenter.x() - onBorder.x()));
     setMinorRadius((int) std::abs((double) aCenter.y() - onBorder.y()));
+    painterPath.addEllipse(QPointF(0, 0), getMajorRadius(), getMinorRadius());
 }
 
 
 Ellipse::~Ellipse(){
 
-}
-
-void Ellipse::draw() {
-    painter->setPen(QPen(getFillColor()));
-    painter->fillRect(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius(), Qt::SolidPattern);
-    painter->drawEllipse(-getMajorRadius(), -getMinorRadius(), 2 * getMajorRadius(), 2 * getMinorRadius());
-}
-
-QRectF Ellipse::boundingRect() const {
-    return QRectF(-getMajorRadius(), -getMinorRadius(),  2 * getMajorRadius(), 2 * getMinorRadius());
 }
 
 int Ellipse::getMajorRadius() const {
@@ -47,9 +38,4 @@ void Ellipse::setMajorRadius(int newVal) {
 
 void Ellipse::setMinorRadius(int newVal){
 	minorRadius = newVal;
-}
-
-QPainterPath Ellipse::shape() const {
-    QPainterPath painterPath;
-    painterPath.addEllipse(QRectF());
 }

@@ -20,7 +20,7 @@ public:
 
 private:
     QGraphicsView * graphicsView;
-    GraphicsScene * scene;
+    GraphicsScene scene;
     QActionGroup * actionGroup;
     QAction* fillColorAction;
 

@@ -59,9 +59,8 @@ QAction * MainWindow::createAction(const QString& filename, const QString& text)
 
 void MainWindow::createCentralWidget()
 {
-    scene = new GraphicsScene;
-    scene->setSceneRect(0, 0, 1000, 800);
-    graphicsView = new QGraphicsView(scene);
+    scene.setSceneRect(0, 0, 1000, 800);
+    graphicsView = new QGraphicsView(&scene);
     graphicsView->setRenderHint(QPainter::Antialiasing);
     graphicsView->setMinimumSize(500, 400);
     QVBoxLayout * layout = new QVBoxLayout;
@@ -76,7 +75,7 @@ void MainWindow::figureChanged() {
 
 //    qDebug() << qVariantValue<GraphicsScene::FigureType>(actionGroup->checkedAction()->data());
 
-    scene->setFigureType(actionGroup->checkedAction()->text());
+    scene.setFigureType(actionGroup->checkedAction()->text());
 }
 
 void MainWindow::createColorToolbar() {
@@ -84,7 +83,7 @@ void MainWindow::createColorToolbar() {
     colorBar->setIconSize(QSize(70, 70));
     colorBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
-    fillColorAction = new QAction(createColorToolButtonIcon(scene->getFillColor()), "Fill color", this);
+    fillColorAction = new QAction(createColorToolButtonIcon(scene.getFillColor()), "Fill color", this);
     colorBar->addAction(fillColorAction);
 //    fillColorAction->setEnabled(false);
     connect(fillColorAction, SIGNAL(triggered()), this, SLOT(fillColorChanged()));
@@ -101,6 +100,6 @@ QIcon MainWindow::createColorToolButtonIcon(QColor color)
 }
 
 void MainWindow::fillColorChanged() {
-    scene->setFillColor(QColorDialog::getColor(scene->getFillColor()));
-    fillColorAction->setIcon(createColorToolButtonIcon(scene->getFillColor()));
+    scene.setFillColor(QColorDialog::getColor(scene.getFillColor()));
+    fillColorAction->setIcon(createColorToolButtonIcon(scene.getFillColor()));
 }
