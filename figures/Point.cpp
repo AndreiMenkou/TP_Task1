@@ -7,11 +7,10 @@
 #include "Point.h"
 
 
-Point::Point(){
-
+Point::Point(const QPoint& point){
+    setCenter(point);
+    painterPath.addEllipse(QPointF(0, 0), 0.5, 0.5);
 }
-
-
 
 Point::~Point(){
 

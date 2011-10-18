@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     figures/Ellipse.cpp \
     figures/Circle.cpp \
     figures/AbstractFigure.cpp \
-    graphicsscene.cpp
+    graphicsscene.cpp \
+    figures/Parallelogramm.cpp
 HEADERS += mainwindow.h \
     figures/Triangle.h \
     figures/Square.h \
@@ -35,5 +36,6 @@ HEADERS += mainwindow.h \
     figures/Ellipse.h \
     figures/Circle.h \
     figures/AbstractFigure.h \
-    graphicsscene.h
+    graphicsscene.h \
+    figures/Parallelogramm.h
 RESOURCES += resources.qrc

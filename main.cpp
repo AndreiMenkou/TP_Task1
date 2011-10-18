@@ -1,5 +1,8 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
+#include <figures/AbstractFigure.h>
+
+qreal AbstractFigure::maxZOrder = 0.1;
 
 int main(int argc, char *argv[])
 {

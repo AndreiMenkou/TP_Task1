@@ -71,7 +71,6 @@ QRectF AbstractFigure::boundingRect() const {
 
 void AbstractFigure::setCenter(const QPoint& newCenter){
         center = newCenter;
-        qDebug() << "AbstractFigure::setCenter " << center;
         setPos(QPointF(center));
 }
 
@@ -98,4 +97,14 @@ void AbstractFigure::mousePressEvent(QGraphicsSceneEvent * event) {
 void AbstractFigure::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
     qDebug() << "Move item " << this;
     QGraphicsItem::mouseMoveEvent(event);
+}
+
+QVariant AbstractFigure::itemChange(GraphicsItemChange change, const QVariant &value) {
+    if (change == ItemSelectedChange && value.toBool()) {
+        if (zValue() < maxZOrder) {
+            maxZOrder += 0.1;
+            setZValue(maxZOrder);
+        }
+    }
+    return QGraphicsItem::itemChange(change, value);
 }

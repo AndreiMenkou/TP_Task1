@@ -8,9 +8,13 @@
 
 
 Rectangle::Rectangle(const QPoint& center, const QPoint& border) {
-
+    QPoint fromCenterA = border - center;
+    QPoint fromCenterB = fromCenterA;
+    fromCenterB.setY(-fromCenterB.y());
+    setCenter(center);
+    setPoints(fromCenterA, fromCenterB);
+    qDebug() << fromCenterA << " " << fromCenterB << "JKJKJK";
 }
-
 
 
 Rectangle::~Rectangle(){

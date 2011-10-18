@@ -11,6 +11,11 @@ Rhombus::Rhombus(){
 
 }
 
+Rhombus::Rhombus(const QPoint & center, const QPoint & border) :
+    Parallelogramm(center, QPoint(center.x(), border.y()), QPoint(border.x(), center.y())){
+
+}
+
 
 
 Rhombus::~Rhombus(){

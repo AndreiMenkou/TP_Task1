@@ -29,10 +29,12 @@ public:
         QPainterPath shape() const;
         void mousePressEvent(QGraphicsSceneEvent *);
         void mouseMoveEvent(QGraphicsSceneMouseEvent *);
+        QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
 private:
         QColor borderColor;
 	int borderWidth;
+        static qreal maxZOrder;
 
 
 

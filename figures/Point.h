@@ -13,7 +13,7 @@ class Point : public Figure1D
 {
 
 public:
-	Point();
+        Point(const QPoint&);
 	virtual ~Point();
 
 };
