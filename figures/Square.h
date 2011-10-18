@@ -14,6 +14,7 @@ class Square : public Rectangle
 
 public:
 	Square();
+        Square(const QPoint&, const QPoint&);
 	virtual ~Square();
 
 };

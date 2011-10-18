@@ -21,8 +21,6 @@ public:
         int getMinorRadius() const;
         void setMajorRadius(int newVal);
         void setMinorRadius(int newVal);
-        void draw();
-        QRectF boundingRect() const;
 
 private:
 	int majorRadius;

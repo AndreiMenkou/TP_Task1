@@ -13,15 +13,15 @@ class Segment : public Figure1D
 {
 
 public:
-	Segment();
+        Segment() {}
+        Segment(const QPoint&, const QPoint&);
 	virtual ~Segment();
 
-	void draw() =0;
-	QPoint* getLineEnd();
-	void setLineEnd(QPoint* newVal);
+        QPoint getLineEnd();
+        void setLineEnd(const QPoint&);
 
 private:
-        QPoint* lineEnd;
+        QPoint lineEnd;
 
 };
 #endif // !defined(EA_A63E711A_044B_4483_8E1E_C2F3855C4E29__INCLUDED_)

@@ -7,10 +7,11 @@
 #include "Segment.h"
 
 
-Segment::Segment(){
-
+Segment::Segment(const QPoint& point1, const QPoint& point2) {
+    setCenter(point1);
+    setLineEnd(point2);
+    painterPath.lineTo(lineEnd - center);
 }
-
 
 
 Segment::~Segment(){
@@ -18,21 +19,11 @@ Segment::~Segment(){
 }
 
 
-
-
-
-void Segment::draw(){
-
+QPoint Segment::getLineEnd(){
+    return lineEnd;
 }
 
 
-QPoint* Segment::getLineEnd(){
-
-	return lineEnd;
-}
-
-
-void Segment::setLineEnd(QPoint* newVal){
-
-	lineEnd = newVal;
+void Segment::setLineEnd(const QPoint& newVal){
+    lineEnd = newVal;
 }

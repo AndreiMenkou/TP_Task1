@@ -16,6 +16,7 @@ INPUT(
 ./debug/Circle.o
 ./debug/AbstractFigure.o
 ./debug/graphicsscene.o
+./debug/Parallelogramm.o
 ./debug/moc_mainwindow.o
 ./debug/moc_graphicsscene.o
 ./debug/qrc_resources.o

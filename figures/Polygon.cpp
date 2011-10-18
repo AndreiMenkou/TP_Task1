@@ -7,8 +7,12 @@
 #include "Polygon.h"
 
 
-Polygon::Polygon(){
+Polygon::Polygon() {
 
+}
+
+Polygon::Polygon(QList<QPoint> * list) {
+    setPoints(list);
 }
 
 
@@ -17,22 +21,20 @@ Polygon::~Polygon(){
 
 }
 
-
-
-
-
-QList<QPoint>* Polygon::getPoints(){
+QList<QPoint>* Polygon::getPoints() {
 
 	return points;
 }
 
 
-void Polygon::move(QPoint* center){
-
-}
-
-
 void Polygon::setPoints(QList<QPoint>* newVal){
-
-	points = newVal;
+        points = newVal;
+        setCenter(points->first());
+        painterPath = QPainterPath();
+        qDebug() << "d";
+        for (int i = 0; i < points->size() - 1; ++i) {
+            qDebug() << i;
+            painterPath.lineTo(points->at(i + 1) - center);
+        }
+        painterPath.lineTo(0, 0);
 }

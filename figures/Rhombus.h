@@ -7,16 +7,16 @@
 #if !defined(EA_C5470681_1453_4885_A2BD_9631C1C4B853__INCLUDED_)
 #define EA_C5470681_1453_4885_A2BD_9631C1C4B853__INCLUDED_
 
-#include "Figure2D.h"
+#include "Parallelogramm.h"
 
-class Rhombus : public Figure2D
+class Rhombus : public Parallelogramm
 {
 
 public:
 	Rhombus();
+        Rhombus(const QPoint&, const QPoint&);
 	virtual ~Rhombus();
 
-	virtual void draw() =0;
 	double getAngle();
 	int getLenghtA();
 	int getLenghtB();

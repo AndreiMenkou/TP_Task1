@@ -13,10 +13,8 @@ class Point : public Figure1D
 {
 
 public:
-	Point();
+        Point(const QPoint&);
 	virtual ~Point();
-
-	void draw() =0;
 
 };
 #endif // !defined(EA_8154CCA9_352E_4048_94C5_F23245FFEC38__INCLUDED_)

@@ -14,7 +14,10 @@ class Ray : public Segment
 
 public:
 	Ray();
+        Ray(const QPoint&, const QPoint&);
 	virtual ~Ray();
+
+protected:
 
 };
 #endif // !defined(EA_EEDF1A3B_5C96_4a81_B8A6_5DF09550621E__INCLUDED_)

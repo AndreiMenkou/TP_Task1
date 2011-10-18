@@ -7,13 +7,14 @@
 #if !defined(EA_42607CBC_8829_400a_ABCF_E4D83BE96049__INCLUDED_)
 #define EA_42607CBC_8829_400a_ABCF_E4D83BE96049__INCLUDED_
 
-#include "Rhombus.h"
+#include "Parallelogramm.h"
 
-class Rectangle : public Rhombus
+class Rectangle : public Parallelogramm
 {
 
 public:
-	Rectangle();
+        Rectangle() {}
+        Rectangle(const QPoint&, const QPoint&);
 	virtual ~Rectangle();
 
 };

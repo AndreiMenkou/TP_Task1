@@ -14,11 +14,10 @@ class Polygon : public Figure2D
 
 public:
 	Polygon();
+        Polygon(QList<QPoint> *);
 	virtual ~Polygon();
 
-	virtual void draw() =0;
 	QList<QPoint>* getPoints();
-        void move(QPoint* center);
 	void setPoints(QList<QPoint>* newVal);
 
 private:

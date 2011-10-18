@@ -11,6 +11,9 @@ Ray::Ray(){
 
 }
 
+Ray::Ray(const QPoint& p1, const QPoint& p2) : Segment(p1, p1 + 1000 * (p2 - p1)) {
+
+}
 
 
 Ray::~Ray(){

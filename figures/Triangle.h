@@ -14,6 +14,7 @@ class Triangle : public Polygon
 
 public:
 	Triangle();
+        Triangle(const QPoint&, const QPoint&, const QPoint&);
 	virtual ~Triangle();
 
 };

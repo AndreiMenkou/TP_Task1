@@ -14,6 +14,7 @@ class Line : public Ray
 
 public:
 	Line();
+        Line(const QPoint&, const QPoint&);
 	virtual ~Line();
 
 };

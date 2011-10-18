@@ -17,17 +17,18 @@ Figure2D::~Figure2D(){
 
 }
 
+void Figure2D::draw() {
+    painter->fillPath(painterPath, QBrush(fillColor));
+    AbstractFigure::draw();
+}
 
 
 
-
-QColor* Figure2D::getFillColor(){
-
+QColor Figure2D::getFillColor(){
 	return fillColor;
 }
 
 
-void Figure2D::setFillColor(QColor* color){
-
+void Figure2D::setFillColor(const QColor& color){
         fillColor = color;
 }

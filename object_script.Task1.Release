@@ -16,6 +16,7 @@ INPUT(
 ./release/Circle.o
 ./release/AbstractFigure.o
 ./release/graphicsscene.o
+./release/Parallelogramm.o
 ./release/moc_mainwindow.o
 ./release/moc_graphicsscene.o
 ./release/qrc_resources.o
